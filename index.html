@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Desafio Softplan</title>
+  <meta charset="utf-8" />
+  <link href="style.css" rel="stylesheet" media="all" />
+  <script src="index.js"></script>
+</head>
+
+<body>
+
+  <form name="formulario">
+
+    <h1>Cadastrar Usuário</h1>
+
+    <input type="text" id="nomeid" placeholder="Nome" required="required" name="nome" />
+    <label for="nome">Nome</label>
+
+    <input type="email" id="emailid" placeholder="example@mail.com" name="email" />
+    <label for="email">Email</label>
+
+    <input type="button" class="enviar" onclick="Enviar();" value="Salvar" />
+  </form>
+  <div>Resultado:
+    <div id="resultadoNome"></div>
+    <div id="resultadoEmail"></div>
+  </div>
+</body>
+
+</html>
