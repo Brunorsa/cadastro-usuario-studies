@@ -10,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
-  },
-  "devDependencies": {
-    "cypress": "^13.13.2"
+    "cors": "^2.8.5"
   }
 }
