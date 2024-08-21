@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import UserList from './UserList';
+import './index.css'; // Importar estilos globais
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -23,22 +24,27 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <form onSubmit={handleSubmit}>
-            <h1>Cadastrar Usuário</h1>
-            <label>Nome</label>
-            <input type="text" data-test="campoNome" name="nome" placeholder="Nome" required />
-            <label>Email</label>
-            <input type="email" data-test="campoEmail" name="email" placeholder="example@mail.com" />
-            <button type="submit">Salvar</button>
-          </form>
-        }
-      />
-      <Route path="/users" element={<UserList users={users} setUsers={setUsers} />} />
-    </Routes>
+    <div className="app-container">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <form onSubmit={handleSubmit} className="user-form">
+              <h1>Cadastrar Usuário</h1>
+              <label htmlFor="nome">Nome</label>
+              <input type="text" name="nome" id="nome" data-test="name_field" placeholder="Nome" required />
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" data-test="email_field" placeholder="example@mail.com" required />
+              <button type="submit">Salvar</button>
+              <button onClick={() => navigate('/users')} className="results-button">
+                Lista de Usuários
+              </button>
+            </form>
+          }
+        />
+        <Route path="/users" element={<UserList users={users} setUsers={setUsers} />} />
+      </Routes>
+    </div>
   );
 }
 
